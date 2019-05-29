@@ -6,6 +6,7 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,css}\"",
+    "lint": "eslint \"**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/lianthompson/fem#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.17.1"
