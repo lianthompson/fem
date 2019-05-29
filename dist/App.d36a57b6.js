@@ -2253,30 +2253,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":"../node_modules/react/cjs/react.development.js"}],"Pet.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Pet = function Pet(props) {
-  //   return React.createElement("div", {}, [
-  //     React.createElement("h1", {}, props.name),
-  //     React.createElement("h2", {}, props.animal),
-  //     React.createElement("h2", {}, props.breed)
-  //   ]);
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, props.name), _react.default.createElement("h2", null, props.animal), _react.default.createElement("h2", null, props.breed));
-};
-
-var _default = Pet;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
+},{"./cjs/react.development.js":"../node_modules/react/cjs/react.development.js"}],"../node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
 var global = arguments[3];
 /** @license React v0.13.6
  * scheduler.development.js
@@ -25771,14 +25748,32 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"Pet.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Pet = function Pet(props) {
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, props.name), _react.default.createElement("h2", null, props.animal), _react.default.createElement("h2", null, props.breed));
+};
+
+var _default = Pet;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
-var _Pet = _interopRequireDefault(require("./Pet"));
-
 var _reactDom = require("react-dom");
+
+var _Pet = _interopRequireDefault(require("./Pet"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25812,38 +25807,9 @@ function (_React$Component) {
   }
 
   _createClass(App, [{
-    key: "handleTitleClick",
-    value: function handleTitleClick() {
-      alert("You clicked the title");
-    }
-  }, {
     key: "render",
     value: function render() {
-      // return React.createElement("div", {}, [
-      //   React.createElement(
-      //     "h1",
-      //     { onClick: this.handleTitleClick },
-      //     "Adopt Me!"
-      //   ),
-      //   React.createElement(Pet, {
-      //     name: "Luna",
-      //     animal: "dog",
-      //     breed: "Havanese"
-      //   }),
-      //   React.createElement(Pet, {
-      //     name: "Satoshi",
-      //     animal: "cat",
-      //     breed: "Black"
-      //   }),
-      //   React.createElement(Pet, {
-      //     name: "Nakamoto",
-      //     animal: "cat",
-      //     breed: "White"
-      //   })
-      // ]);
-      return _react.default.createElement("div", null, _react.default.createElement("h1", {
-        onClick: this.handleTitleClick
-      }, "Adopt me!"), _react.default.createElement(_Pet.default, {
+      return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt me!"), _react.default.createElement(_Pet.default, {
         name: "Luna",
         animal: "dog",
         breed: "Havanese"
@@ -25863,7 +25829,7 @@ function (_React$Component) {
 }(_react.default.Component);
 
 (0, _reactDom.render)(_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","./Pet":"Pet.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Pet":"Pet.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -25891,7 +25857,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63328" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51676" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
