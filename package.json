@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lianthompson/fem/issues"
   },
-  "homepage": "https://github.com/lianthompson/fem#readme"
+  "homepage": "https://github.com/lianthompson/fem#readme",
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
 }
