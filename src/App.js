@@ -5,6 +5,7 @@ const Pet = props => {
     React.createElement("h2", {}, props.breed)
   ]);
 };
+
 class App extends React.Component {
   handleTitleClick() {
     alert("You clicked the title");
