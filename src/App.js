@@ -1,5 +1,5 @@
 import React from "react";
-import Pet from "./Pet.js";
+import Pet from "./Pet";
 import { render } from "react-dom";
 
 class App extends React.Component {
