@@ -9,10 +9,33 @@ const petfinder = pf({
 });
 
 class App extends React.Component {
-  componentDidMount() {
-    const promise = petfinder.breed.list({ animal: "dog" });
+  constructor(props) {
+    super(props);
 
-    promise.then(console.log, console.error);
+    this.state = {
+      pets: []
+    };
+  }
+  componentDidMount() {
+    petfinder.pet
+      .find({ output: "full", location: "San Francisco, CA" })
+      .then(data => {
+        let pets;
+
+        if (data.petfinder.pets && data.petfinder.pets.pet) {
+          if (Array.isArray(data.petfinder.pets.pet)) {
+            pets = data.petfinder.pets.pet;
+          } else {
+            pets = [data.petfinder.pets.pet];
+          }
+        } else {
+          pets = [];
+        }
+
+        this.setState({
+          pets
+        });
+      });
   }
   render() {
     return (
