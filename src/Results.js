@@ -2,7 +2,7 @@ import React from "react";
 import pf from "petfinder-client";
 import Pet from "./Pet";
 import SearchBox from "./SearchBox";
-// import { Consumer } from "./SearchContext";
+import { Consumer } from "./SearchContext";
 
 const petfinder = pf({
   key: process.env.API_KEY,
@@ -17,9 +17,19 @@ class Results extends React.Component {
       pets: []
     };
   }
+
   componentDidMount() {
+    this.search();
+  }
+
+  search = () => {
     petfinder.pet
-      .find({ output: "full", location: "San Francisco, CA" })
+      .find({
+        output: "full",
+        location: this.props.searchParams.location,
+        animal: this.props.searchParams.animal,
+        breed: this.props.searchParams.breed
+      })
       .then(data => {
         let pets;
 
@@ -37,11 +47,11 @@ class Results extends React.Component {
           pets
         });
       });
-  }
+  };
   render() {
     return (
       <div className="search">
-        <SearchBox />
+        <SearchBox search={this.search} />
         {this.state.pets.map(pet => {
           let breed;
 
@@ -67,4 +77,10 @@ class Results extends React.Component {
   }
 }
 
-export default Results;
+export default function ResultsWithContext(props) {
+  return (
+    <Consumer>
+      {context => <Results {...props} searchParams={context} />}
+    </Consumer>
+  );
+}
