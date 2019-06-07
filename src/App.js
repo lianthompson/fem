@@ -5,6 +5,7 @@ import pf from "petfinder-client";
 import { Provider } from "./SearchContext";
 import Results from "./Results";
 import Details from "./Details";
+import Navbar from "./Navbar";
 import SearchParams from "./SearchParams";
 
 const petfinder = pf({
@@ -71,14 +72,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <Link to="/">Adopt Me!</Link>
-          <Link to="/search-params">
-            <span aria-label="search" role="img">
-              🦕
-            </span>
-          </Link>
-        </header>
+        <Navbar />
         <Provider value={this.state}>
           <Router>
             <Results path="/" />
