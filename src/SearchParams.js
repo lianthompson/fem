@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBox from "./SearchBox";
+import Search from "./SearchBox";
 import { navigate } from "@reach/router/lib/history";
 
 class SearchParams extends React.Component {
@@ -9,7 +9,7 @@ class SearchParams extends React.Component {
   render() {
     return (
       <div className="search-route">
-        <SearchBox />
+        <Search />
       </div>
     );
   }

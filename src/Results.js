@@ -1,7 +1,7 @@
 import React from "react";
 import pf from "petfinder-client";
 import Pet from "./Pet";
-import SearchBox from "./SearchBox";
+import Search from "./SearchBox";
 import { connect } from "react-redux";
 
 const petfinder = pf({
@@ -51,7 +51,7 @@ class Results extends React.Component {
   render() {
     return (
       <div className="search">
-        <SearchBox search={this.search} />
+        <Search search={this.search} />
         {this.state.pets.map(pet => {
           let breed;
 
